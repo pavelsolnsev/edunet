@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Примеры. Редактор многоугольника</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="referrer" content="always">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <style>
+        #ylead-win {
+            width:90%;
+            max-width: 500px;
+            max-height: 90%;
+        }
+        #ylead-win .modal-close {
+            float:right;
+            font-size: 2em;
+            color:#999;
+        }
+        #ylead-win p#conf-text {
+            font-size:0.8em;
+            line-height: normal;
+        }
+        #ylead-win p#conf-text::before {
+            font-family: 'Material Icons';
+            font-size: 1.5em;
+            color: #009FD6;
+            margin: -2px 3px 23px 0;
+            content: 'check';
+            float: left;
+        }
+        #ylead-win p#conf-text + p {
+            text-align:center;
+            margin-top:15px;
+        }
+        #ylead-win .intl-tel-input .country-list {
+            white-space: nowrap !important;
+            max-height: 135px;
+        }
+
+        #ylead-win #tel-ok::after {
+            font-family: 'Material Icons';
+            font-size: 2em;
+            content: 'check';
+            color:#48af1c;
+            vertical-align: middle;
+        }
+        #ylead-win #tel-err {
+            color:#f44336;
+            font-size: .9em;
+        }
+        #ylead-win #tel-err::before {
+            font-family: 'Material Icons';
+            content: 'close';
+            font-size: 1.4em;
+            float: left;
+            margin-top: -2px;
+        }
+        @media only screen and (max-width: 501px) { /* plugin require 501 */
+            #ylead-win .intl-tel-input .country-list {
+                max-width: 260px;
+            }
+            #ylead-win #lead-phone {
+                width: 150px;
+            }
+        }
+    </style>
+</head>
+<body class="container">
+<h1 style="font-size: 22px">Заголовок H1</h1>
+Поменять: <input type="text" id="h1" style="width: 50%" value="Заголовок H1" autocomplete="off" />
+
+<div class="ylead-block row valign-wrapper" style="flex-wrap: wrap; background: linear-gradient(0deg, #4441CF, #4441CF), #3F2AFF; margin-bottom: 2rem;">
+    <div class="col s12 m8 l6" style="color:#fff;">
+            <p style="font-family: Arial; font-weight: 900;font-size: 1.40em;margin:.5rem 0 .5rem 0">Единая приёмная комиссия</p>
+            <p style="font-family: Roboto; font-size: 1.25em;margin:0 0 .5rem 0;">70 направлений, все формы обучения</p>
+    </div>
+    <div class="col l2 hide-on-med-and-down" style="align-self: end">
+        <img src="//static.edunetwork.ru/imgs/ylead/image1.png" style="width: 77%; vertical-align: bottom"/>
+    </div>
+    <div class="col s12 m4 l4" style="text-align: center" id="show-ylead-win">
+        <a href="#" style="color:#000; background: linear-gradient(92deg, #74F7B9 0%, #CDF774 100%);border-radius: 5px;text-align: center;font-family: Arial;font-weight: 700; font-size: 1.1em; padding: .5rem 1rem; display: inline-block">
+            Узнать подробнее
+        </a>
+    </div>
+</div>
+
+
+
+<!--noindex-->
+<div id="ylead-win" class="modal">
+    <div class="modal-close material-icons">close</div>
+    <div class="modal-content">
+        <h3>Отправить заявку</h3>
+        <form method="post" autocomplete="off">
+            <p class="input-field">
+                <input type="text" id="ylead-name" required pattern="[A-Za-zа-яА-ЯёЁ\s\-]{1,32}" class="validate">
+                <label for="ylead-name">Имя</label>
+                <span class="helper-text" data-error="Некорректное имя" data-success=""></span>
+            </p>
+            <p class="input-field">
+                <input type="email" id="ylead-email" required class="validate">
+                <label for="ylead-email">Email</label>
+                <span class="helper-text" data-error="Некорректный Email" data-success=""></span>
+            </p>
+            <p class="input-field">
+                <input type="tel" id="ylead-phone" placeholder="Номер телефона" />
+            </p>
+            <p id="conf-text">Я даю согласие на обработку персональных данных, согласен на получение информационных сообщений и соглашаюсь c <a href="//www.edunetwork.ru/conf-policy.html">политикой конфиденциальности</a>.</p>
+            <p><button type="button" class="btn">Готово</button> </p>
+        </form>
+    </div>
+</div>
+<!--/noindex-->
+<textarea style="height: 300px" autocomplete="off"></textarea>
+<script>
+    $(function() {
+        $("#h1").on('keyup', function () {
+            $('h1').text($("#h1").val());
+        });
+
+        if($("#ylead-win")) {
+            $('#show-ylead-win').on('click', function () {
+                if(!$('#ylead-win').attr('style')) { // not initiated
+                    $('#ylead-win').modal({
+                        dismissible: true
+                    });
+
+                    $.getScript("https://cdn.rawgit.com/andr-04/inputmask-multi/1.2.0/js/jquery.inputmask-multi.min.js")
+                    .done(function () {
+                        $.getScript("https://cdn.rawgit.com/RobinHerbots/Inputmask/3.2.7/dist/min/jquery.inputmask.bundle.min.js")
+                        .done(function () {
+                            $("#ylead-phone").inputmasks($.extend(true, {}, {
+                                    inputmask: {
+                                        definitions: {
+                                            '#': {
+                                                validator: "[0-9]",
+                                                cardinality: 1
+                                            }
+                                        },
+                                        showMaskOnHover: false,
+                                        autoUnmask: false,
+                                        clearMaskOnLostFocus: true
+                                    },
+                                    match: /[0-9]/,
+                                    replace: '#',
+                                    listKey: "mask"
+                                }, {
+                                    list: $.masksSort($.masksLoad("https://cdn.rawgit.com/andr-04/inputmask-multi/master/data/phone-codes.json"), ['#'], /[0-9]|#/, "mask"),
+                                    onMaskChange: function() {}
+                                }
+                            ));
+                        }).fail(function () {
+                            M.toast({html: 'Ошибка загрузки компонента'});
+                            window.setTimeout(function () {document.location.reload();}, 5000);
+                        });;
+                    }).fail(function () {
+                        M.toast({html: 'Ошибка загрузки компонента'});
+                        window.setTimeout(function () {document.location.reload();}, 5000);
+                    });
+                }
+                $('#ylead-win').modal('open');
+            });
+
+            $("#ylead-win form button").on("click", function() {
+                const $form=$(this).closest('form');
+                let utms='';
+                if(window.location.search.substring(1).includes('utm_source=')) {
+                    utms+='utm_source=edunetwork_ads';
+                } else {
+                    utms+='utm_source=edunetwork_seo';
+                }
+
+                let m = '';
+                if((m = /(^|\&)utm_medium=([\w\.\-]+)/g.exec(window.location.search.substring(1))) !== null) {
+                    m = m[2];
+                }
+
+                utms+='&utm_campaign='+$('h1').text().trim()+'&utm_medium='+m+'&utm_term='+$($form).attr('name');
+
+                $("textarea").val($("textarea").val()+utms+"\n\n");
+                const submitText=$("button", $form).text();
+                let a=true;
+                $(".validate", $form).each(function () {
+                    if(!$(this).is(".valid")) {
+                        M.toast({html: 'Не все поля заполнены корректно'});
+                        a=false;
+                        return false;
+                    }
+                });
+
+                const name=$("#ylead-name", $form).val().trim();
+                const phone=$("#ylead-phone", $form).val().trim();
+                const email=$("#ylead-email", $form).val().trim();
+
+                if(!phone) {
+                    M.toast({html: 'Телефон указан некорректно'});
+                    return false;
+                }
+
+                return false;
+                /*
+                if(a) {
+                    $("button", $frm).attr("disabled", "disabled").html("Отправка");
+                    $.ajax({
+                        type: 'POST',
+                        url: '//mods.edunetwork.ru/ylead.php',
+                        data: {
+                            name:  name,
+                            email: email,
+                            phone: phone,
+                            utms: utms
+                        },
+                        success: function(msg) {
+                            if(msg === 'Ok') {
+                                M.toast({html: 'Заявка успешно отправлена'});
+                                $("button", $frm).html('Готово!');
+                            } else {
+                                $("button", $frm).html(submitText).removeAttr("disabled");
+                                if(msg.substr(0,3) === 'Err') {
+                                    M.toast({html: msg.substr(4)});
+                                } else { // wtf
+                                    M.toast({html: 'Ошибка сервера'});
+                                }
+                            }
+                        },
+                        error:function() {
+                            $("button", $frm).html(submitText).removeAttr("disabled");
+                            M.toast({html: 'Ошибка сервера'});
+                        }
+                    });
+                }*/
+            });
+        }
+    });
+</script>
+
+
+</body>
+</html>

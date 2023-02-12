@@ -1,0 +1,203 @@
+AddDefaultCharset utf-8
+ErrorDocument 404 /404.php
+
+RewriteEngine on
+Options +FollowSymlinks
+RewriteBase /
+RewriteRule ^.htaccess$ - [F]
+
+RewriteRule ^ajax/$ /ajax.php [QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*[^/])$ $1/ [L,R=301]
+
+RewriteRule ^jour_/$ /index.php?act=art-cat&id=2
+RewriteRule ^jour_/(\d+)$ /index.php?act=article&c_id=2&id=$1
+
+RewriteRule ^reviews/$ /index.php?act=art-cat&id=3
+RewriteRule ^reviews/(\d+)/$ /index.php?act=article&c_id=3&id=$1
+
+Rewriterule ^thanks /index.php?act=thanks
+Rewriterule ^thanks/ /index.php?act=thanks
+Rewriterule ^limit /index.php?act=limit
+Rewriterule ^limit/ /index.php?act=limit
+
+Rewriterule ^limit /index.php?act=limit
+Rewriterule ^limit/ /index.php?act=limit
+
+Rewriterule ^professii /index.php?act=professii
+Rewriterule ^professii/$ /index.php?act=professii
+Rewriterule ^test/prof /index.php?act=profTest
+Rewriterule ^test/prof/$ /index.php?act=profTest
+Rewriterule ^professiiArticle /index.php?act=professiiArticle
+Rewriterule ^professiiArticle/$ /index.php?act=professiiArticle
+
+RewriteRule ^faq-f/$ /index.php?act=faq&id=1
+RewriteRule ^faq-s/$ /index.php?act=faq&id=2
+RewriteRule ^faq-m/$ /index.php?act=faq&id=3
+RewriteRule ^faq-p/$ /index.php?act=faq&id=29
+
+RewriteRule ^faq-f/(\d+)/$ /index.php?act=faq&cat=1&id=$1
+RewriteRule ^faq-s/(\d+)/$ /index.php?act=faq&cat=2&id=$1
+RewriteRule ^faq-m/(\d+)/$ /index.php?act=faq&cat=3&id=$1
+RewriteRule ^faq-p/(\d+)/$ /index.php?act=faq&cat=29&id=$1
+
+Rewriterule ^(\d+)/$ /index.php?subject=$1 [QSA]
+Rewriterule ^(\d+)/(\d+)/$ /index.php?subject=$1&city=$2 [QSA]
+Rewriterule ^dist/$ /index.php?subject=99 [QSA]
+
+Rewriterule ^(\d+)/phd/$ /index.php?subject=$1&lvl=p [QSA]
+Rewriterule ^(\d+)/(\d+)/phd/$ /index.php?subject=$1&city=$2&lvl=p [QSA]
+
+Rewriterule ^(\d+)/mag/$ /index.php?subject=$1&lvl=m [QSA]
+Rewriterule ^(\d+)/(\d+)/mag/$ /index.php?subject=$1&city=$2&lvl=m [QSA]
+Rewriterule ^dist/mag/$ /index.php?subject=99&lvl=m [QSA]
+
+Rewriterule ^(\d+)/sec/$ /index.php?subject=$1&lvl=s [QSA]
+Rewriterule ^(\d+)/(\d+)/sec/$ /index.php?subject=$1&city=$2&lvl=s [QSA]
+Rewriterule ^dist/sec/$ /index.php?subject=99&lvl=s [QSA]
+
+Rewriterule ^(\d+)/ege/$ /index.php?act=ege&subject=$1 [QSA]
+Rewriterule ^(\d+)/(\d+)/ege/$ /index.php?act=ege&subject=$1&city=$2 [QSA]
+
+Rewriterule ^(\d+)/d(\d+)/$ /index.php?subject=$1&direct=$2 [QSA]
+Rewriterule ^(\d+)/(\d+)/d(\d+)/$ /index.php?subject=$1&city=$2&direct=$3 [QSA]
+
+Rewriterule ^(\d+)/v(\d+)/$ /index.php?act=vuz&vuz=$2&subj=$1&city=0 [QSA]
+Rewriterule ^(\d+)/(\d+)/v(\d+)/$ /index.php?act=vuz&vuz=$3&subj=$1&city=$2 [QSA]
+
+Rewriterule ^(\d+)/v(\d+)/specs/(\d+)/$ /index.php?act=specs&vuz=$2&subj=$1&city=0&spec=$3 [QSA]
+Rewriterule ^(\d+)/(\d+)/v(\d+)/specs/(\d+)/$ /index.php?act=specs&vuz=$3&subj=$1&city=$2&spec=$4 [QSA]
+
+Rewriterule ^(\d+)/v(\d+)/sv(\d+)/s(\d+)/$ /index.php?act=specs&vuz=$2&subj=$1&city=0&sv=$3&spec=$4 [QSA]
+Rewriterule ^(\d+)/(\d+)/v(\d+)/sv(\d+)/s(\d+)/$ /index.php?act=specs&vuz=$3&subj=$1&city=$2&sv=$4&spec=$5 [QSA]
+
+
+Rewriterule ^(\d+)/v(\d+)/specs/$ /index.php?act=specs&vuz=$2&subj=$1&city=0 [QSA]
+Rewriterule ^(\d+)/(\d+)/v(\d+)/specs/$ /index.php?act=specs&vuz=$3&subj=$1&city=$2 [QSA]
+
+Rewriterule ^(\d+)/v(\d+)/faculties/(\d+)/$ /index.php?act=faculties&vuz=$2&subj=$1&city=0&faculty=$3 [QSA]
+Rewriterule ^(\d+)/(\d+)/v(\d+)/faculties/(\d+)/$ /index.php?act=faculties&vuz=$3&subj=$1&city=$2&faculty=$4 [QSA]
+
+Rewriterule ^(\d+)/v(\d+)/faculties/$ /index.php?act=faculties&vuz=$2&subj=$1&city=0 [QSA]
+Rewriterule ^(\d+)/(\d+)/v(\d+)/faculties/$ /index.php?act=faculties&vuz=$3&subj=$1&city=$2 [QSA]
+
+Rewriterule ^sect /index.php?act=sect
+Rewriterule ^sect/ /index.php?act=sect
+
+Rewriterule ^(\d+)/v(\d+)/opinions/$ /index.php?act=opinions&vuz=$2&subj=$1&city=0
+Rewriterule ^(\d+)/(\d+)/v(\d+)/opinions/$ /index.php?act=opinions&vuz=$3&subj=$1&city=$2
+
+
+Rewriterule ^(\d+)/v(\d+)/data/$ /index.php?act=data&vuz=$2&subj=$1&city=0
+Rewriterule ^(\d+)/(\d+)/v(\d+)/data/$ /index.php?act=data&vuz=$3&subj=$1&city=$2
+
+Rewriterule ^(\d+)/openDays/$ /index.php?act=pages&id=dods&city=$1
+Rewriterule ^(\d+)/(\d+)/openDays/$ /index.php?act=pages&id=dods&subj=$1&city=$2
+
+Rewriterule ^(\d+)/map/$ /index.php?act=pages&id=map&city=$1&subj=0 [QSA]
+Rewriterule ^(\d+)/(\d+)/map/$ /index.php?act=pages&id=map&city=$2&subj=$1 [QSA]
+
+Rewriterule ^cities/$ /index.php?act=pages&id=cities
+Rewriterule ^checkVuz/$ /index.php?act=pages&id=checkVuz
+Rewriterule ^favor/$ /index.php?act=pages&id=favor
+
+Rewriterule ^connect/$ /index.php?act=paneler
+Rewriterule ^connect/rules/$ /index.php?act=article&id=168
+Rewriterule ^connect-([a-z0-9]+)$ /index.php?act=paneler-active&id=$1
+Rewriterule ^connect-([a-z0-9]+)/$ /index.php?act=paneler-active&id=$1
+
+RewriteRule ^specs/$ /index.php?act=specsList
+RewriteRule ^specs/(\d+)/$ /index.php?act=specDesc&id=$1
+
+RewriteRule ^about/$ /index.php?act=article&id=27
+RewriteRule ^foru/$ /index.php?act=article&id=28
+RewriteRule ^ads/$ /index.php?act=article&id=29
+RewriteRule ^contacts/$ /index.php?act=article&id=30
+RewriteRule ^jour/$ /index.php?act=jour
+RewriteRule ^jour/(\d+)/$ /index.php?act=jourItem&id=$1
+
+RewriteRule ^vuz_panel/faq/start/$ /index.php?act=article&id=169
+RewriteRule ^vuz_panel/faq/update/$ /index.php?act=article&id=170
+RewriteRule ^vuz_panel/faq/answer/$ /index.php?act=article&id=171
+#RewriteRule ^vuz_panel/faq/profile/$ /index.php?act=article&id=186
+
+RewriteRule ^statistics/BQAfw6/москва/(\d{2})$ /index.php?act=statistics&city_id=26&year=$1
+RewriteRule ^statistics/BQAfw6/санкт-петербург/(\d{2})$ /index.php?act=statistics&city_id=44&year=$1
+RewriteRule ^statistics/BQAfw6/новосибирск/(\d{2})$ /index.php?act=statistics&city_id=32&year=$1
+RewriteRule ^statistics/BQAfw6/екатеринбург/(\d{2})$ /index.php?act=statistics&city_id=11&year=$1
+RewriteRule ^statistics/BQAfw6/нижний-новгород/(\d{2})$ /index.php?act=statistics&city_id=30&year=$1
+RewriteRule ^statistics/BQAfw6/казань/(\d{2})$ /index.php?act=statistics&city_id=14&year=$1
+RewriteRule ^statistics/BQAfw6/челябинск/(\d{2})$ /index.php?act=statistics&city_id=58&year=$1
+RewriteRule ^statistics/BQAfw6/омск/(\d{2})$ /index.php?act=statistics&city_id=33&year=$1
+RewriteRule ^statistics/BQAfw6/самара/(\d{2})$ /index.php?act=statistics&city_id=43&year=$1
+RewriteRule ^statistics/BQAfw6/ростов-на-дону/(\d{2})$ /index.php?act=statistics&city_id=40&year=$1
+RewriteRule ^statistics/BQAfw6/уфа/(\d{2})$ /index.php?act=statistics&city_id=54&year=$1
+RewriteRule ^statistics/BQAfw6/красноярск/(\d{2})$ /index.php?act=statistics&city_id=21&year=$1
+RewriteRule ^statistics/BQAfw6/пермь/(\d{2})$ /index.php?act=statistics&city_id=37&year=$1
+RewriteRule ^statistics/BQAfw6/воронеж/(\d{2})$ /index.php?act=statistics&city_id=10&year=$1
+RewriteRule ^statistics/BQAfw6/волгоград/(\d{2})$ /index.php?act=statistics&city_id=8&year=$1
+RewriteRule ^statistics/BQAfw6/краснодар/(\d{2})$ /index.php?act=statistics&city_id=20&year=$1
+RewriteRule ^statistics/BQAfw6/саратов/(\d{2})$ /index.php?act=statistics&city_id=45&year=$1
+RewriteRule ^statistics/BQAfw6/тюмень/(\d{2})$ /index.php?act=statistics&city_id=52&year=$1
+RewriteRule ^monitoring/MGsY2vP48Q$ /index.php?act=monitoring
+
+RewriteRule ^monitoring/MGsY2vP48Q/getTableUniversitySpecialties$ /index.php?act=monitoring&table=UniversitySpecialties
+RewriteRule ^monitoring/MGsY2vP48Q/getTableListUniversitiesWithDirections$ /index.php?act=monitoring&table=ListUniversitiesWithDirections
+RewriteRule ^monitoring/MGsY2vP48Q/getTableListIdAndNameUniversities$ /index.php?act=monitoring&table=ListIdAndNameUniversities
+
+RewriteCond %{THE_REQUEST} /reviews/205/ [NC]
+RewriteRule ^ /jour/80/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/195/ [NC]
+RewriteRule ^ /jour/81/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/196/ [NC]
+RewriteRule ^ /jour/82/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/216/ [NC]
+RewriteRule ^ /jour/84/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/214/ [NC]
+RewriteRule ^ /jour/85/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/212/ [NC]
+RewriteRule ^ /jour/86/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/208/ [NC]
+RewriteRule ^ /jour/87/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/207/ [NC]
+RewriteRule ^ /jour/88/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/215/ [NC]
+RewriteRule ^ /jour/89/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/210/ [NC]
+RewriteRule ^ /jour/90/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/209/ [NC]
+RewriteRule ^ /jour/91/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/217/ [NC]
+RewriteRule ^ /jour/92/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/218/ [NC]
+RewriteRule ^ /jour/93/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/219/ [NC]
+RewriteRule ^ /jour/94/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/221/ [NC]
+RewriteRule ^ /jour/95/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/222/ [NC]
+RewriteRule ^ /jour/96/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/220/ [NC]
+RewriteRule ^ /jour/97/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/([^\s&]*)/ [NC]
+RewriteRule ^ /jour/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /reviews/ [NC]
+RewriteRule ^ /jour/ [R=301,L,NE,QSD]
+
+RewriteCond %{THE_REQUEST} /jour/\?([^\s&]*)/ [NC]
+RewriteRule ^ /jour/%1/ [R=301,L,QSD]
+RewriteCond %{THE_REQUEST} /jour/([^\s&]*)/\? [NC]
+RewriteRule ^ /jour/%1/ [R=301,L,QSD]
+
+RewriteCond %{REQUEST_URI}  ^/99/sec/ [NC]
+RewriteCond %{QUERY_STRING} form=4$ [NC]
+RewriteRule ^ /dist/sec/ [R=301,L,QSD]
+
+RewriteCond %{REQUEST_URI}  ^/99/mag/ [NC]
+RewriteCond %{QUERY_STRING} form=4$ [NC]
+RewriteRule ^ /dist/mag/ [R=301,L,QSD]
+
+RewriteCond %{REQUEST_URI}  ^/99/ [NC]
+RewriteCond %{QUERY_STRING} form=4$ [NC]
+RewriteRule ^ /dist/? [R=301,L,QSD]

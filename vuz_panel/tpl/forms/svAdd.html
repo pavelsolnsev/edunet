@@ -1,0 +1,48 @@
+<h2>Добавление института или факультета</h2>
+<form action="index.php" method="post" id="svFrm">
+	<div class="cols2">
+		<div class="leftCol">
+			<div>
+		        <label>Название:
+					<div class="hint">
+						<p>Наименование учебного подразделения (института или факультета) в именительном падеже. Запрещено написание наименования в верхнем регистре, за исключением аббревиатур</p>
+						<div class="example">
+							<p>Например, Факультет иностранных языков</p>
+							<p>Институт социологии</p>
+							<p>Институт молодежной политики и труда (ИМПиТ)</p>
+						</div>
+					</div>
+				</label>
+		        <input type="text" name="name" id="name" rel="general" />
+		    </div>
+		</div>
+		<div class="rightCol">
+			<div>
+		        <label>Адрес:
+		        	<div class="hint">
+						<p>Без субъекта, района, названия населенного пункта, метро, способа проезда. Возможно указание этажа, кабинета</p>
+						<div class="example">
+							<p>Например, ул. Образцова, дом 6, корп. 1, стр. 2А, каб. 47</p>
+						</div>
+					</div>
+					<div class="hint" id="copy">
+						<p>Нажмите здесь чтобы скопировать адрес и индекс из данных вуза</p>
+					</div>
+				</label>
+		        <input type="text" id="address" rel="address" name="address" placeholder="ул. Образцова, дом 6, корп. 1, каб. 47" />
+		    </div>
+		</div>
+	</div>
+	
+	
+	<div>
+		<fieldset>
+			<legend align="center">Проверьте полный адрес подразделения:</legend>
+			Россия, [subjCity], <span id="fa_address"></span>
+		</fieldset>
+	</div>
+    <div class="cntr">
+    	<button class="button cancel">Отмена</button>
+        <button type="submit" class="button">Добавить</button>
+    </div>
+</form>

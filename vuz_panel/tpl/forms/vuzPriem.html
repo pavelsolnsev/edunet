@@ -1,0 +1,126 @@
+<h2>Информация о приемной комиссии</h2>
+<form id="priemFrm">
+	<div class="cols2">
+		<div class="leftCol">
+		    <div>
+		        <label>Адрес:
+					<div class="hint">
+						<p>Без субъекта, района, названия населенного пункта, метро, способа проезда. Возможно указание этажа, кабинета</p>
+						<div class="example">
+							<p>Например, ул. Образцова, дом 6, корп. 1, стр. 2А, каб. 47</p>
+						</div>
+					</div>
+					 
+					<div class="hint" id="copy">
+						<p>Нажмите здесь чтобы скопировать адрес и индекс из данных вуза</p>
+					</div>
+				</label>
+		        <input type="text" name="addr" id="addr" rel="address" value="[address]" placeholder="ул. Образцова, дом 6, корп. 1, каб. 47" />
+		    </div>
+			<div class="tel" id="telExample">
+		        <label>Телефон:
+		        	<div class="hint">
+						<p>Телефон в десятизначном формате, без кода страны</p>
+						<div class="example">
+							<p>(111) 222-33-44</p>
+							<p>(1111) 22-33-44</p>
+							<p>(11111) 2-33-44</p>
+						</div>
+					</div>	
+		        </label>
+		        [fPhone]  
+		    </div>
+		</div>
+		<div class="rightCol">
+			<div>
+		        <label>Почтовый индекс:</label><input type="text" maxlength="6" name="index" id="index" value="[index]" rel="natural" />
+			</div>
+			<div>
+		        <input type="button" id="addTel"  id="addTel" value="Еще телефон" />
+		    </div>
+		</div>
+	</div>
+	<div id="tels">[tels]</div>
+	<div class="cols2">
+		<div class="leftCol">
+			<div>
+		        <label>Сайт:
+					<div class="hint">
+						<p>Адрес страницы официального сайта вуза, посвященной приемной комиссии, допустим <b>только один адрес</b> (URL)</p>
+						<div class="example">Например, www.ipo.ru/priemka.htm</div>
+					</div>
+				</label>
+		        <input type="text" name="site" id="site" rel="*url" value="[site]" placeholder="www.example.ru/priem" />
+		    </div>
+		</div>
+		<div class="rightCol">
+		    <div>
+		       	<label>Email:
+					<div class="hint">
+						<p>Допустим только один email адрес</p>
+						<div class="example">
+							<p>Например, priem@ipo.ru</p>
+						</div>
+					</div>
+				</label>
+		        <input type="text" name="email" value="[email]" rel="*email" id="email" placeholder="priem@example.ru" />
+		    </div>
+	    </div>
+	</div>
+	<div>
+		<fieldset>
+			<legend align="center">Проверьте полный адрес приемной комиссии:</legend>
+			<span id="fa_index">[index]</span>, Россия, [subjCity], <span id="fa_address">[address]</span>
+		</fieldset>
+    </div>
+    
+    <div>
+		<fieldset>
+			<legend align="center">Период работы приемной комиссии:</legend>
+			<div>
+				<label class="chb">Круглогодично: <input type="checkbox" name="allyear" value="y" id="allyear" class="chbLabel" [allyear]/></label>
+			</div>
+			<div class="cols2">
+				<div class="leftCol">
+					<label>Начало периода:</label>
+					<input type="text" name="start" id="start" class="w100 cntr" value="[start]" />
+				</div>
+				<div class="rightCol">
+					<label>Конец периода:</label>
+					<input type="text" name="end" id="end" class="w100 cntr" value="[end]" />
+				</div>
+			</div>
+		</fieldset>
+	</div>
+
+	<div class="cntr">График работы применой комиссии:</div>
+	<div>
+		<table class="schedule">
+			<thead>
+			<tr>
+				<td>Пн</td>
+				<td>Вт</td>
+				<td>Ср</td>
+				<td>Чт</td>
+				<td>Пт</td>
+				<td>Сб</td>
+				<td>Вс</td>
+				<td>Время работы</td>
+				<td>Доп. (каб./ауд.)</td>
+			</tr>
+			</thead>
+			<tbody>
+			[schedule]
+			</tbody>
+		</table>
+		<a href="#" id="addSchedule">Добавить еще строку</a>
+	</div>
+    
+    <div class="cntr">
+        <button type="submit" class="button">Сохранить изменения</button>
+    </div>
+</form>
+<div id="page-msg">
+	<span></span>
+	<p></p>
+</div>

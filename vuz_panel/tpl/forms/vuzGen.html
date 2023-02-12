@@ -1,0 +1,101 @@
+<h2>Общая информация о вузе</h2>
+<form action="index.php" method="post" id="genFrm">
+	<div>
+		<label>Полное наименование (название) вуза в соответствии с лицензией: 
+			<div class="hint">
+				<div class="example">
+					<p>Например, Государственное образовательное учреждение высшего профессионального образования Институт примеров и образцов</p>
+					<p>Государственное бюджетное образовательное учреждение высшего профессионального образования Алтайский государственный медицинский университет Федерального агентства по здравоохранению и социальному развитию</p>
+				</div>
+			</div>
+		</label>
+        <textarea name="fullName" id="fullName" rel="general" disabled="disabled">[fullName]</textarea>
+    </div>
+    <div>
+		<label>Наименование вуза:
+			<div class="hint">
+				<p>Наименование под которым вуз знают абитуриенты в именительном падеже, без кавычек, без аббревиатур, без организационно правовой формы. Запрещено написание наименования в верхнем регистре.</p>
+				<div class="example"><p>Например, Институт примеров и образцов</p></div>
+			</div>
+		</label>
+        <textarea name="name" id="name" rel="general" disabled="disabled">[name]</textarea>
+    </div>
+   
+    <div class="cols2">
+    	<div class="leftCol">
+    		 <div>
+		        <label>Аббревиатура: 
+					<div class="hint">
+						<p>Аббревиатура названия вуза, без организационно-правовой формы и ее аббревиатур (ГБОУ, НОУ, ВПО и др.)</p>
+						<div class="example">Например, ИПО</div>
+					</div>
+				</label>
+		        <input type="text" name="abbr" id="abbr" value="[abbr]" rel="general"[dis] maxlength="30" />
+		    </div>
+			<div class="tel" id="telExample">
+		        <label>Телефон:
+		        	<div class="hint">
+						<p>Телефон в десятизначном формате, без кода страны</p>
+						<div class="example">
+							<p>(111) 222-33-44</p>
+							<p>(1111) 22-33-44</p>
+							<p>(11111) 2-33-44</p>
+						</div>
+					</div>	
+		        </label>
+		        [phone]  
+		    </div>
+		    <div>
+		        <label>Сайт:
+					<div class="hint">
+						<p>Официальный сайт вашего вуза. Допустим <b>только один адрес</b> (URL)</p>
+						<div class="example">Например, www.ipo.ru</div>
+					</div>
+				</label>
+		        <input type="text" name="site" id="site" value="[site]" />
+		    </div>
+		</div>
+		<div class="rightCol">
+			<div>
+		        <label>Почтовый индекс:</label>
+		        <input type="text" name="index" rel="post" maxlength="6" id="index" value="[index]" />
+			</div>
+			<div>
+		        <label>Адрес:
+		        	<div class="hint">
+						<p>Без субъекта, района, названия населенного пункта и данных не относящихся к адресу здания (в т.ч. метро, остановка, этаж, кабинет и др.)</p>
+						<div class="example">
+							<p>Например, ул. Образцова, дом 6, корп. 1, стр. 2А</p>
+						</div>
+					</div>	
+		        </label>
+		        <input type="text" name="address" id="address" rel="address" value="[address]" />
+		    </div>
+		    <div>
+		        <label>Email:
+					<div class="hint">
+						<p>Допустим только один email адрес</p>
+						<div class="example">
+							<p>Например, public@ipo.ru</p>
+						</div>
+					</div>
+				</label>
+		        <input type="text" name="email" id="email" value="[email]" rel="email" />
+		    </div>
+		</div>
+    </div>
+	
+	<div>
+		<fieldset>
+			<legend align="center">Проверьте полный адрес вуза:</legend>
+			<span id="fa_index">[index]</span>, Россия, [subjCity], <span id="fa_address">[address]</span>
+		</fieldset>
+    </div>
+	<div class="cntr">
+		<button type="submit" class="button">Сохранить изменения</button>
+	</div>
+</form>
+<div id="page-msg">
+	<span></span>
+	<p></p>
+</div>

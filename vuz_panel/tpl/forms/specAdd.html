@@ -1,0 +1,26 @@
+<h2>Добавление образовательной программы</h2>
+<form action="index.php" id="specFrm" onsubmit="specs.profExams()" autocomplete="off">
+    <div class="cntr">
+        Код направления подготовки:
+		<div class="hint">
+			<p>Код направления подготовки (бывший код по ОКСО). Шестизначный, цифровой код каждого направления подготовки указанный в лицензии вуза на образовательную деятельность</p>
+			<div class="example">
+				<p>Например, 04.03.01</p>
+				<p>05.04.01</p>
+			</div>
+		</div>
+        <input type="text" id="code" name="code" value="" />
+        <input type="button" id="findCode" class="button" value="Найти" />
+    </div>
+    <div class="cntr">
+        <fieldset>
+        	<legend align="center">Наименование направления подготовки:</legend>
+        	<span id="name">&nbsp;</span>
+		</fieldset>
+    </div>
+	<div id="advFields"></div>
+	<div id="buttons">
+	    <button class="cancel button">Отмена</button>
+	    <button type="submit" class="button">Добавить</button>
+	</div>
+</form>

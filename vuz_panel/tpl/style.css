@@ -1,0 +1,1196 @@
+html {
+    height: 100%;
+}
+body {
+    margin:0;
+    color:#222;
+    font: 15px Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    min-width: 1000px;
+    height: 100%;
+    background: #fff;
+}
+
+* {
+    outline:none;
+}
+img {
+    border-style:none;
+    height: auto;
+}
+
+a {
+    color: #0081AC;
+    outline:none;
+    text-decoration: none;
+}
+a:hover {
+    color: #C9345E;
+}
+a:active {
+    color: #264963;
+}
+
+input[type=text] {
+    padding: 7px 5px 3px;
+    margin: 0;
+    background: #fff;
+    border: 1px solid #D2D2D2;
+    font-size: 13px;
+    color: #000;
+    width: 145px;
+}
+input[type=text]:disabled {
+    opacity:.6;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+}
+input, textarea, select {
+    font:100% arial,sans-serif;
+    vertical-align:middle;
+}
+input:focus::-webkit-input-placeholder {
+    color:transparent;
+}
+input:focus:-moz-placeholder {
+    color:transparent;
+}
+input:focus:-ms-input-placeholder {
+    color:transparent;
+}
+input:focus::-moz-placeholder {
+    color:transparent;
+}
+select {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 186px;
+}
+
+.button {
+    color: #FFF;
+    padding: 9px 30px 9px;
+    background: #009FD6;
+    border: none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    margin: 0;
+    font-size:15px;
+}
+.button a {
+    color:#fff;
+}
+.button:hover {
+    background: #008ab8;
+}
+.button:disabled, .button:disabled:hover  {
+    background:#999;
+}
+.button:active {
+    background: #008ab8;
+}
+.button.cancel {
+    background: #f58240;
+}
+.button.cancel:hover {
+    background: #f5a260;
+}
+
+header,
+nav,
+section,
+article,
+aside,
+footer,
+figure,
+menu,
+dialog {
+    display: block;
+}
+
+body p {
+    margin: 0 0 17px;
+}
+form, fieldset {
+    margin:0;
+    padding:0;
+    border-style:none;
+}
+.cntr {
+    text-align: center;
+}
+.right {
+    text-align:right;
+}
+h1 {
+    font-size:32px;
+    font-weight:normal;
+    color:#333;
+    line-height:36px;
+    margin-bottom:22px;
+}
+h2 {
+    font-size:24px;
+    font-weight:normal;
+    color:#333;
+}
+
+/* CARCAS */
+#pw1 {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    min-height: 100%;
+    box-sizing: border-box;
+    padding:0 20px;
+}
+#pw1 > #pw2 {
+    max-width:1200px;
+    min-width:960px;
+    margin: auto;
+
+}
+#pw1 > #pw2 > header {
+    margin: 0 -9999px;
+    padding: 0px 9999px 0px;
+    overflow: hidden;
+    background: #fff;
+    border-bottom:1px solid #e9e9e9;
+}
+#pw1 > #pw2 #main {
+    padding: 0 0 130px;
+}
+#pw1 > #pw2 #main > section, #pw1 > #pw2 #main > aside {
+    margin:0 0 20px;
+}
+
+/* two col && three col */
+#pw1 > #pw2 #main > section {
+    float: left;
+    width: 100%;
+}
+#pw1 > #pw2 #main > aside#right-col {
+    float: left;
+    width: 300px;
+    margin-left: -300px;
+}
+/* two col */
+#pw1 > #pw2 #main > section #col2 {
+    margin-right: 300px;
+    padding-right:30px;
+}
+
+/* three col */
+#pw1 > #pw2 #main > section #col3 {
+    margin: 0 310px 0 210px;
+    padding: 0 10px;
+}
+#pw1 > #pw2 #main > aside#left-col{
+    float: left;
+    width: 200px;
+    margin-left: -100%;
+}
+
+/* HEADER */
+#pw1 > #pw2 > header > nav, #pw1 > #pw2 > header > div  {
+    display:inline-block;
+}
+#pw1 > #pw2 > header > div#logo {
+    margin:7px 0 5px;
+}
+#pw1 > #pw2 > header > div#region {
+    margin-left:23px;
+    font-size:15px;
+    vertical-align:top;
+    line-height:50px;
+    margin-top:2px;
+    width:200px;
+    overflow: hidden;
+    height:45px;
+}
+#pw1 > #pw2 > header > div#region a {
+    color:#333;
+    padding-left:22px;
+    background: url("/imgs/tpl2/select.gif") no-repeat left center;
+}
+#pw1 > #pw2 > header > div#region a span {
+    border-bottom: 1px dotted #666;
+}
+#pw1 > #pw2 > header > div#region a:hover {
+    cursor:pointer;
+    color:#C9345E;
+}
+
+#pw1 #pw2 > header nav ul {
+    list-style: none;
+}
+#pw1 #pw2 > header nav ul li {
+    display:inline-block;
+}
+#pw1 > #pw2 > header nav ul li a {
+    color:#333;
+}
+#pw1 > #pw2 > header nav ul li a:hover {
+    color:#C9345E;
+}
+#pw1 > #pw2 > header > nav#services {
+    margin-left:20px;
+    font-size:17px;
+    color:#333;
+    vertical-align: top;
+}
+
+#pw1 > #pw2 > header > nav#services ul li {
+    box-sizing:border-box;
+    margin-top:0;
+    line-height:50px;
+    margin-right:20px;
+}
+#pw1 > #pw2 > header > nav#services ul li:first-child {
+    border-top:3px solid #C9345E;
+}
+#pw1 > #pw2 > header > nav#services ul li:last-child {
+    margin:0;
+}
+
+#pw1 > #pw2 > header nav#user {
+    float:right;
+}
+#pw1 > #pw2 > header nav#user ul li {
+    display:inline-block;
+    font-size:15px;
+    line-height:50px;
+    margin-top:2px;
+    vertical-align: middle;
+}
+#pw1 > #pw2 > header nav#user ul li a {
+    padding-left:24px;
+}
+
+
+
+#u-p h1 {
+    margin-top:20px;
+}
+#u-p #carcas {
+    width: 100%;
+    overflow: hidden;
+}
+#u-p #carcas #menu {
+    float: left;
+    width: 200px;
+}
+#u-p #carcas #menu ul {
+    list-style:none;
+    border:1px solid #ccc;
+    margin:0 0 20px;
+}
+#u-p #carcas #menu ul li {
+    border-bottom: 1px solid #ccc;
+}
+#u-p #carcas #menu ul li:last-child {
+    border: none;
+}
+#u-p #carcas #menu ul li a {
+    display:block;
+    padding:10px;
+}
+#u-p #carcas #menu ul li a:hover {
+    background: #f8f8f8;
+}
+#u-p #carcas #menu ul li.sel a {
+    color: #444;
+    font-weight:bold;
+}
+#u-p #carcas #menu ul li.submenu {
+    color:#888;
+    text-align:center;
+    padding:3px;
+}
+#u-p #carcas #menu p {
+    text-align:center;
+    color:#666;
+}
+
+#u-p #carcas #content {
+    margin-left: 230px;
+}
+
+
+/************************************
+ * General
+ ***********************************/
+#u-p #carcas #content h2 {
+    margin-bottom:15px;
+}
+#u-p #carcas #content .hint, #u-p #carcas #content .hint2  {
+    display:inline-block;
+}
+
+#u-p #carcas #content form > div,
+#u-p #carcas #content form .leftCol > div,
+#u-p #carcas #content form .rightCol > div  {
+    margin-bottom:15px;
+}
+#u-p #carcas label {
+    color: #606b74;
+}
+#u-p #carcas #content textarea {
+    width:100%;
+    height:65px;
+    border: 1px solid #c0c6ca;
+    color:#333;
+    padding: 5px;
+    box-sizing: border-box;
+    background:#fcfcfc;
+}
+#u-p #carcas #content textarea:disabled {
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+#u-p #carcas #content input[type=text], #u-p #carcas #content input[type=url] {
+    border: 1px solid #c0c6ca;
+    padding: 5px;
+    color:#333;
+    box-sizing: border-box;
+    background:#fcfcfc;
+    font-size:15px;
+}
+#u-p #carcas #content input[type=text]:disabled {
+    text-align:left;
+}
+
+#u-p #carcas #content fieldset {
+    margin:0 auto;
+    margin-top:20px;
+    border:1px solid #999;
+    text-align:center;
+    padding:10px 20px;
+    width:700px;
+}
+#u-p #carcas #content fieldset legend {
+    color:#606b74;
+    font-size:15px;
+}
+
+#u-p #carcas #content form #copy .hintIcon {
+    background:url(//static.edunetwork.ru/imgs/icons/other/copy.png) no-repeat;
+    width:15px;
+    height:14px;
+    cursor:default;
+}
+#u-p #carcas #content form #copy .hintIcon:hover {
+    cursor: pointer;
+}
+
+/* layout */
+#u-p #carcas #content .cols2 {
+    overflow: hidden;
+    width: 100%;
+}
+#u-p #carcas #content .cols2 > div {
+    float:left;
+    width:50%;
+}
+#u-p #carcas #content .cols2 > div label {
+    display: block;
+}
+
+/*telephone fields */
+#u-p #carcas #content form .telCode {
+    width:54px;
+    text-align:center;
+    background:#fff;
+}
+#u-p #carcas #content form .tel1 {
+    width:38px;
+    text-align:right;
+    background:#fff;
+}
+#u-p #carcas #content form .tel2 {
+    width:28px;
+    text-align:center;
+    background:#fff;
+}
+#u-p #carcas #content form .tel3 {
+    width:28px;
+    text-align:center;
+    background:#fff;
+}
+#u-p #carcas #content form .telAdv {
+    width:110px
+}
+#u-p #carcas #content form #addTel {
+    cursor:default;
+    padding:0 10px 0;
+    color:#fff;
+    font-size:12px;
+    border:1px solid #0680CE;
+    background:#0B82CE;
+    height:25px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    margin-top:24px;
+}
+#u-p #carcas #content form #addTel:hover {
+    cursor:pointer;
+    background:#0c92dE;
+}
+#u-p #carcas #content form #addTel:disabled {
+    cursor:default;
+    background:#aaa;
+    border:1px solid #777;
+}
+
+
+/* page msg */
+#u-p #carcas #content .badField {
+    border:1px solid #c00 !important;
+    -webkit-box-shadow: 0px 0px 1px #c00;
+    -moz-box-shadow: 0px 0px 1px #c00;
+    box-shadow:0px 0px 1px #c00;
+}
+#u-p #carcas #content #page-msg {
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    margin-top:20px;
+    margin-bottom:10px;
+    width:610px;
+    display:none;
+}
+#u-p #carcas #content #page-msg.errMsg {
+    border:1px solid #c88;
+    background:#fee;
+    padding:13px 15px 13px 15px;
+}
+#u-p #carcas #content #page-msg.errMsg span {
+    color:#c88;
+    font-size:19px;
+}
+#u-p #carcas #content #page-msg.errMsg p {
+    color:#555;
+    font-size:14px;
+    margin:5px 0 0;
+    display:block;
+}
+#u-p #carcas #content #page-msg.okMsg {
+    border:1px solid #8a8;
+    background:#efe;
+    padding:13px 15px 13px 15px;
+}
+#u-p #carcas #content #page-msg.okMsg span {
+    color:#8a8;
+    font-size:19px;
+}
+#u-p #carcas #content #page-msg.okMsg p {
+    display:none;
+}
+/***********************************
+ * NEWS
+ ***********************************/
+#u-p #news {
+    height:700px;
+    overflow-y:scroll;
+    border-bottom: 1px solid #ddd;
+}
+#u-p #news .sep {
+    margin:15px 0 15px;
+    height:1px;
+    background:#ccc;
+}
+#u-p #news .update {
+    color:#888;
+}
+#u-p #news p:first-child {
+    font-weight:bold;
+}
+#u-p #news p:first-child .update {
+    color:#811;
+}
+#u-p #news h3 {
+    margin:15px 0 5px 0;
+}
+#u-p #news p {
+    margin-bottom:4px;
+    line-height: 20px;
+}
+#u-p #news ol {
+    margin-left:35px;
+    margin-bottom:5px;
+}
+#u-p #news ol li {
+    margin-bottom:5px;
+}
+
+
+/*****************************************
+ * Common information
+ ****************************************/
+#u-p #carcas #content form#genFrm textarea#fullName {
+    height:85px;
+}
+#u-p form#genFrm .cols2 {
+    max-width:850px;
+}
+#u-p form#genFrm input#abbr {
+    width:300px;
+}
+#u-p form#genFrm input#index {
+    width:65px;
+    text-align:center;
+}
+#u-p form#genFrm input#email {
+    width:300px;
+}
+#u-p form#genFrm input#address {
+    width:100%;
+    box-sizing:border-box;
+}
+#u-p form#genFrm input#site {
+    width:300px;
+}
+
+/*****************************************
+ * Advanced information
+ ****************************************/
+#u-p form#advFrm .enwDropDown {
+    clear:none;
+}
+#u-p #carcas #content  form#advFrm fieldset {
+    margin-bottom:15px;
+}
+#u-p form#advFrm fieldset div.cntr {
+    margin-bottom:10px;
+}
+#u-p form#advFrm fieldset input {
+    margin-left:10px;
+}
+#u-p form#advFrm #text-order {
+    border:1px solid #bbc;
+    background:#f3f3ff;
+    padding:13px 15px 13px 15px;
+}
+#u-p form#advFrm textarea {
+    height: 400px !important;
+}
+
+/*****************************************
+ * License
+ ****************************************/
+#u-p form#licFrm {
+    color:#606b74;
+}
+#u-p form#licFrm .num {
+    width:70px;
+    text-align:center;
+}
+#u-p form#licFrm .date {
+    width:90px;
+    text-align:center;
+}
+#u-p form#licFrm span {
+    color:#333;
+    vertical-align:middle;
+}
+#u-p form#licFrm label {
+    display: inline-block;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+#u-p form#licFrm #lic_unlim {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}
+#u-p #carcas #content form#licFrm > div {
+    margin-bottom:30px;
+}
+#u-p form#licFrm #parent-lic {
+    border:1px solid #bbc;
+    background:#f3f3ff;
+    padding:13px 15px 13px 15px;
+    display:none;
+}
+#u-p form#licFrm #no-acr {
+    font-size:14px;
+}
+#u-p form#licFrm #accr-alert {
+    color:#c00;
+}
+
+
+/*****************************************
+ * Priem
+ ****************************************/
+#u-p form#priemFrm {
+    max-width:750px;
+}
+#u-p form#priemFrm input#addr, #u-p form#priemFrm input#site {
+    width:340px;
+}
+#u-p form#priemFrm input#index {
+    width:65px;
+    text-align:center;
+}
+#u-p form#priemFrm input#email {
+    width:250px;
+}
+#u-p #carcas #content form#priemFrm .cols2 {
+    margin:0;
+}
+#u-p #carcas #content form#priemFrm fieldset .cols2 {
+    width:350px;
+    margin:10px auto 0;
+}
+
+#u-p form#priemFrm #tels .tel {
+    margin-bottom:15px;
+}
+#u-p form#priemFrm .schedule {
+    border-collapse:collapse;
+    border:1px solid #aaa;
+    margin:0 auto;
+}
+#u-p form#priemFrm .schedule thead td {
+    text-align:center;
+}
+#u-p form#priemFrm .schedule td {
+    border:1px solid #aaa;
+    padding:5px;
+}
+#u-p form#priemFrm .schedule td.time {
+    width:245px;
+}
+#u-p form#priemFrm .schedule .cb {
+    vertical-align:middle;
+}
+#u-p form#priemFrm .schedule .adv {
+    width:136px;
+}
+#u-p form#priemFrm #addSchedule {
+    margin:10px auto;
+    width:200px;
+    display:block;
+    background:url("//static.edunetwork.ru/jquery/flexigrid/css/images/add.png") no-repeat;
+    padding-left:20px;
+    color:#777 !important;
+
+}
+#u-p form#priemFrm .schedule .enwDropDown {
+    display: inline-block;
+    vertical-align:middle;
+}
+
+
+/*****************************************
+ * Subunit
+ ****************************************/
+#u-p form#svFrm {
+
+}
+#u-p form#svFrm #name, #u-p form#svFrm #address {
+    width:350px;
+}
+#u-p form#svFrm #index {
+    width:65px;
+    text-align:center;
+}
+#u-p form#svFrm #site {
+    width:300px;
+}
+#u-p form#svFrm #email {
+    width:200px;
+}
+#u-p #carcas #content form#svFrm fieldset {
+    margin-bottom:25px;
+}
+
+
+/*****************************************
+ * SPECS
+ ****************************************/
+#u-p form#specFrm {
+
+}
+#u-p #noSv {
+    max-width:700px;
+    line-height: 18px;
+}
+#u-p #noSv p {
+    margin-bottom:5px;
+}
+#u-p form#specFrm #code {
+    width:80px;
+    text-align:center;
+}
+#u-p form#specFrm #findCode {
+    border-radius: 1px;
+    padding:5px 15px;
+}
+#u-p form#specFrm .enwDropDown {
+    clear:none;
+}
+
+#u-p form#specFrm #advFields {
+    width:680px;
+    margin:0 auto;
+}
+
+#u-p form#specFrm #addProfile {
+    border-radius: 1px;
+    padding:5px 15px;
+    margin-top:17px;
+}
+
+#u-p form#specFrm .marg {
+    margin-bottom:25px;
+}
+
+#u-p form#specFrm .subHeader {
+    margin-top:20px;
+    font-size:17px;
+}
+#u-p form#specFrm .subHeader > div {
+    border-bottom:1px solid #ccc;
+    box-sizing:border-box;
+    width:330px !important;
+    text-align:center;
+    padding:3px;
+}
+#u-p form#specFrm .subHeader > div:first-child {
+    border-right:1px solid #ccc;
+}
+
+#u-p form#specFrm .fs > div {
+    box-sizing:border-box;
+    width:340px !important;
+    padding-top:15px;
+}
+#u-p form#specFrm .fs > div.disabled {
+    opacity: .4;
+}
+#u-p form#specFrm .fs > div:first-child {
+    border-right:1px solid #ccc;
+    width:330px !important;
+}
+#u-p form#specFrm .fs > div:last-child {
+    padding-left:15px;
+}
+#u-p form#specFrm #free {
+    width:45px;
+    text-align:center;
+}
+#u-p form#specFrm .cost {
+    width:70px;
+    text-align:center;
+}
+#u-p form#specFrm fieldset#exams {
+    width:95%;
+    box-sizing: border-box;
+    margin-left:0;
+}
+#u-p form#specFrm fieldset#exams #select-label {
+    text-align: left;
+    font-size: 10px;
+    margin: 0 0 0 10px;
+}
+
+#u-p form#specFrm #addEge {
+    border-radius: 1px;
+    padding:5px 15px;
+}
+#u-p form#specFrm #example {
+    display:none;
+}
+#u-p form#specFrm #RusYaz {
+    margin:15px 0 5px;
+}
+#u-p form#specFrm #RusYaz span {
+    color:#999;
+}
+
+#u-p form#specFrm .exam {
+    margin-bottom:5px;
+}
+#u-p form#specFrm .exam input[type=checkbox] {
+    margin-right: 15px
+}
+#u-p form#specFrm .exam select {
+    background:#fff;
+    border:1px solid #ccc;
+    width: 170px;
+}
+#u-p form#specFrm .examsTxt div:first-child {
+    color:#606b74;
+}
+#u-p form#specFrm .examsTxt span {
+    color:#aaa;
+}
+#u-p form#specFrm .examsTxt textarea {
+    width:95% !important;
+}
+#u-p form#specFrm #fscore, #u-p form#specFrm #pscore  {
+    width:40px;
+    text-align:center;
+}
+#u-p form#specFrm #exams .delIcon, #u-p form#specFrm #profiles .delIcon  {
+    width:16px;
+    height:16px;
+    background:url(//static.edunetwork.ru/imgs/icons/other/delIcon16.png);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    display:inline-block;
+}
+#u-p form#specFrm #buttons {
+    display:none;
+    text-align:center;
+}
+#u-p form#specFrm #buttons .button.cancel {
+    margin-right:30px;
+}
+
+/*****************************************
+ * DODS
+ ****************************************/
+#u-p form#openDayFrm {
+}
+#u-p form#openDayFrm label {
+    display:block;
+}
+#u-p form#openDayFrm .enwDropDown {
+    clear:none;
+}
+
+#u-p form#openDayFrm #date {
+    width:90px;
+    text-align:center;
+}
+#u-p form#openDayFrm .cols2 > div {
+    width:125px !important;
+}
+#u-p form#openDayFrm .rightCol input {
+    width:30px;
+    text-align:center;
+}
+#u-p form#openDayFrm #name {
+    width:500px;
+}
+#u-p form#openDayFrm #address, #u-p form#openDayFrm #url {
+    width:300px;
+}
+
+#u-p form#openDayFrm #buttons {
+    text-align:center;
+}
+#u-p form#openDayFrm #buttons .button.cancel {
+    margin-right:30px;
+}
+
+
+/*****************************************
+ * Thanks
+ ****************************************/
+#u-p #thanks p {
+    margin-bottom:5px;
+    line-height: 20px;
+}
+
+
+.ui-autocomplete {
+    border-radius: 1px;
+    border:1px solid #c0c6ca;
+    width:400px !important;
+    margin-top:-1px;
+}
+
+.ui-datepicker {
+    background-color: #fff;
+    border: 1px solid #66AFE9;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(102,175,233,.6);
+    display: none;
+    margin-top: 4px;
+    padding: 10px;
+    width: 240px;
+}
+.ui-datepicker a,
+.ui-datepicker a:hover {
+    text-decoration: none;
+}
+.ui-datepicker a:hover,
+.ui-datepicker td:hover a {
+    color: #2A6496;
+    -webkit-transition: color 0.1s ease-in-out;
+    -moz-transition: color 0.1s ease-in-out;
+    -o-transition: color 0.1s ease-in-out;
+    transition: color 0.1s ease-in-out;
+}
+.ui-datepicker .ui-datepicker-header {
+    margin-bottom: 4px;
+    text-align: center;
+}
+.ui-datepicker .ui-datepicker-title {
+    font-weight: 700;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+    cursor: default;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    height: 20px;
+    line-height: 1;
+    margin-top: 2px;
+    width: 30px;
+}
+.ui-datepicker .ui-datepicker-prev {
+    float: left;
+    text-align: left;
+}
+.ui-datepicker .ui-datepicker-next {
+    float: right;
+    text-align: right;
+}
+.ui-datepicker .ui-datepicker-prev:before {
+    content: "<";
+}
+.ui-datepicker .ui-datepicker-next:before {
+    content: ">";
+}
+.ui-datepicker .ui-icon {
+    display: none;
+}
+.ui-datepicker .ui-datepicker-calendar {
+    table-layout: fixed;
+    width: 100%;
+}
+.ui-datepicker .ui-datepicker-calendar th,
+.ui-datepicker .ui-datepicker-calendar td {
+    text-align: center;
+    padding: 4px 0;
+}
+.ui-datepicker .ui-datepicker-calendar td {
+    border-radius: 4px;
+    -webkit-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    -moz-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    -o-transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+}
+.ui-datepicker .ui-datepicker-calendar td:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
+.ui-datepicker .ui-datepicker-calendar td a {
+    text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-current-day {
+    background-color: #4289cc;
+}
+.ui-datepicker .ui-datepicker-current-day a {
+    color: #fff;
+}
+.ui-datepicker .ui-datepicker-calendar .ui-datepicker-unselectable:hover {
+    background-color: #fff;
+    cursor: default;
+}
+.ui-datepicker-year {
+    width:auto !important;
+}
+
+
+
+.flexigrid {
+    border:1px solid #999;
+}
+.flexigrid div.bDiv td div, .flexigrid div.hDiv th div {
+    box-sizing:border-box;
+}
+.flexigrid div.fbutton .add {
+    background: url(//static.edunetwork.ru/jquery/flexigrid/css/images/add.png) no-repeat center left;
+}
+.flexigrid div.fbutton .edit {
+    background: url(//static.edunetwork.ru/jquery/flexigrid/css/images/edit.png) no-repeat center left;
+}
+
+.flexigrid div.fbutton .delete {
+    background: url(//static.edunetwork.ru/jquery/flexigrid/css/images/close.png) no-repeat center left;
+}
+.flexigrid div.fbutton .clone {
+    background: url(//static.edunetwork.ru/jquery/flexigrid/css/images/copy.png) no-repeat center left;
+}
+
+.flexigrid div.bDiv tr:hover td,
+.flexigrid div.bDiv tr:hover td.sorted,
+.flexigrid div.bDiv tr.trOver td.sorted,
+.flexigrid div.bDiv tr.trOver td {
+    background: #ddd;
+    border-bottom: none;
+    border-top: none;
+}
+.flexigrid div.bDiv tr.trSelected:hover td,
+.flexigrid div.bDiv tr.trSelected:hover td.sorted,
+.flexigrid div.bDiv tr.trOver.trSelected td.sorted,
+.flexigrid div.bDiv tr.trOver.trSelected td,
+.flexigrid tr.trSelected td.sorted,
+.flexigrid tr.trSelected td {
+    background: #c8c8c8 !important;
+    border-bottom: none;
+}
+.flexigrid div.hDiv {
+    background:#f8f8f8;
+}
+.flexigrid div.hDiv th {
+    border-right:1px solid #aaa;
+}
+.flexigrid div.nBtn.srtd {
+    background:#ccc;
+}
+.flexigrid div.hDiv th.sorted {
+    background:#ddd;
+}
+.flexigrid div.bDiv {
+    overflow-y:hidden;
+    overflow-x:auto;
+}
+.flexigrid div.pDiv {
+    border-top:1px solid #aaa;
+    border-bottom:1px solid #aaa;
+    background: #f8f8f8;
+}
+.flexigrid div.pDiv div.pButton:hover {
+    border-color:#ddd;
+}
+.flexigrid div.pDiv .pcontrol input {
+    padding:2px !important;
+}
+.flexigrid div.tDiv {
+    border-top:1px solid #aaa;
+    border-bottom:1px solid #aaa;
+    font-weight:normal;
+    background: #f8f8f8;
+}
+.flexigrid div.hDiv {
+    border-top:none;
+    border-bottom:1px solid #aaa;
+}
+.flexigrid tr.erow td {
+    background: #f0f0f0;
+    border-bottom: none;
+}
+.flexigrid tr td.sorted {
+    background: #f8f8f8;
+    border:none;
+}
+.flexigrid tr.erow td.sorted {
+    background: #e8e8e8;
+    border:none;
+}
+.flexigrid tr td.sorted div {
+    border-right:1px solid #ddd;
+    margin-left:1px;
+}
+.flexigrid div.pDiv input, .flexigrid div.sDiv input, .flexigrid div.pDiv select, .flexigrid div.sDiv select {
+    border:1px solid #ddd;
+    background:#fff;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    color:#333;
+}
+.flexigrid div.pDiv input {
+    font-size:13px;
+    text-align:center;
+}
+.flexigrid div.mDiv {
+    background:#f0f0f0;
+}
+.flexigrid div.mDiv div.ptogtitle {
+    border:1px solid #ddd;
+}
+.flexigrid div.fbutton:hover, .flexigrid div.fbutton.fbOver {
+    border: 1px solid #ddd;
+}
+.flexigrid div.nBtn {
+    border-left: 1px solid #ddd;
+    background:#eee;
+}
+.flexigrid div.nDiv {
+    background:#fff;
+    border:1px solid #ddd;
+}
+.flexigrid div.nDiv table td {
+    border:none;
+}
+.flexigrid div.nDiv tr:hover td, .flexigrid div.nDiv tr.ndcolover td {
+    border:none;
+    background:#eee;
+
+}
+#gridOverlay {
+    display:none;
+}
+
+#modalBack {
+    position:absolute;
+    z-index:1000;
+    top:0;
+    left:0;
+    display:none;
+    background:#000;
+}
+#delWin {
+    position:absolute;
+    z-index:1001;
+    background:#fee;
+    border:1px solid #e99;
+    padding: 10px 15px;
+    opacity:0;
+    filter:alpha(opacity=0);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+    font-size:13px;
+}
+#delWin #confButtons {
+    margin-top:10px;
+    text-align:center;
+}
+#delWin #confButtons button {
+    cursor:default;
+    width:50px;
+    color:#fff;
+    font-size:12px;
+    border:1px solid #0680CE;
+    background:#0B82CE;
+    height:25px;
+    margin:0 7px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -khtml-border-radius: 2px;
+    border-radius: 2px;
+}
+#delWin #confButtons button:hover {
+    cursor:pointer;
+    background:#1B92DE;
+}
+#delWin #confButtons button:first-child {
+    border:1px solid #a55;
+    background:#D14F3A;
+}
+#delWin #confButtons button:first-child:hover {
+    cursor:pointer;
+    background:#E15F4A;
+}

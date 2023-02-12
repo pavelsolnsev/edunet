@@ -1,0 +1,55 @@
+<h2>Дополнительная информация о вузе</h2>
+<form id="advFrm" method="post" enctype="multipart/form-data">
+	<fieldset>
+    	<legend align="center">Логотип вуза:</legend>
+		<div class="cntr">
+			<span class="logo">[logo]</span>
+		</div>
+		<div>
+	        <label>Загрузить логотип вуза:
+				<div class="hint">
+					<p>Логотип вуза предоставляется проекту в формате JPG. Размером не более (30 кб). В случае <b>если данное поле незаполнено, текущий логотип удален не будет</b></p>
+				</div>
+			</label>
+			<input id="logoFile" type="file" name="logoFile" />
+		</div>
+	</fieldset>
+	
+	<div class="cntr">
+		<label>О вузе:
+			<div class="hint">
+				<p>Текст должен быть уникальным и написан исключительно для нашего проекта. В тексте нежелательно наличие ссылок на URL-адреса других сайтов. Текст проходит проверку перед публикацией.</p>
+			</div>
+		</label>
+		<div>
+	     	[text]
+		</div>
+	</div>
+
+	<fieldset>
+		<legend align="center">Галерея:</legend>
+		<div class="cntr">
+			<span class="gallery"></span>
+		</div>
+		<div>
+			<label>Загрузить новые фотографии:
+				<div class="hint">
+					<p>Фотография предоставляется проекту в формате JPG. Размером не более (1 Мб)</p>
+				</div>
+			</label>
+			<br>
+			<input id="galleryFile" type="file" name="galleryFile" />
+		</div>
+		<br>
+		[gallery]
+	</fieldset>
+
+	<div class="cntr">
+		<input type="hidden" name="textEdit" id="textEdit" value="0" />
+		<button type="submit" class="button">Сохранить изменения</button>
+	</div>
+</form>
+<div id="page-msg">
+	<span></span>
+	<p></p>
+</div>

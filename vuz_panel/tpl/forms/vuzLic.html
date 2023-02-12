@@ -1,0 +1,29 @@
+<form id="licFrm" method="post">
+	<h2>Лицензия</h2>
+	<div>
+		Рег № <input disabled="disabled" type="text" class="num" id="lic_num" name="lic_num" maxlength="6" value="[lic_num]" rel="natural" />
+		Действует с <input disabled="disabled" type="text" class="date" name="lic_start" id="lic_start" value="[lic_start]"  rel="floatPlus" />
+	</div>
+
+	<h2>Аккредитация</h2>
+	<div>
+		Рег № <input disabled="disabled" type="text" class="num" id="acr_num" name="acr_num" maxlength="6" value="[acr_num]" />
+		Действует с <input disabled="disabled" class="date" type="text" name="acr_start" id="acr_start" value="[acr_start]" />
+		<!--<p><a href="#" id="no-acr">Нажмите здесь если у вуза на данный момент нет аккредитации</a></p>-->
+		<p id="accr-alert">Внимание! Вы не ввели данные аккредитации, при сохранении изменений, все образовательные программы вашего вуза будут отмечены как «неаккредитованные».</p>
+	</div>
+
+	<div id="parent-lic" class="[parent]">
+		Ваш филиал использует лицензию и аккредитацию головного вуза. Лицензия №[lic_num] от [lic_start]. Аккредитация №[acr_num] от [acr_start].
+		Для изменения данных головного вуза свяжитесь со службой технической поддежки: support@edunetwork.ru
+	</div>
+	
+	<!--
+    <div>
+        <button type="submit" class="button">Сохранить изменения</button>
+    </div> -->
+</form>
+<div id="page-msg">
+	<span></span>
+	<p></p>
+</div>

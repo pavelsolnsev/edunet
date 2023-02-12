@@ -1,0 +1,115 @@
+<input type="hidden" id="spec-name" value="[name]" />
+<div class="cols2">
+	<div class="leftCol">
+		<label>Форма обучения:</label>
+		<select id="form" name="form">
+			<option value="1">Очная</option>
+			<option value="2">Очно-заочная</option>
+			<option value="3">Заочная</option>
+			<option value="4">Дистанционная</option>
+		</select>
+	</div>
+	<div class="rightCol">
+		<label>Срок обучения:</label>
+		<select id="srok" name="srok">
+			[sroks]
+		</select>
+	</div>	
+</div>
+<p>
+	<label>Профиль:</label>
+	<textarea name="prof"></textarea>
+</p>
+<div>
+	<label>Подразделение:
+		<div class="hint2">
+			<p>Факультет или институт который реализует данную образовательную программу</p>
+		</div>
+	</label>
+	<select id="sv" name="sv">
+		[sv]
+	</select>
+</div>
+<div class="subHeader cols2">
+	<div class="leftCol">
+		<label>Первое высшее образование: <input id="f" checked="checked" type="checkbox" name="f" value="y" /></label>
+	</div>
+	<div class="rightCol">
+		<label>Второе высшее образование: <input id="s" type="checkbox" name="s" value="y" /></label>
+	</div>	
+</div>
+<div class="fs cols2">
+	<div class="leftCol">	
+		<div>
+			<label>Бюджетных мест:</label>
+			<input type="text" id="free" rel="*natural" name="free" />
+		</div>
+			     
+		<div>
+			<label>Стоимость обучения (руб/год):</label>
+			<input type="text" id="f_cost" rel="*naturalS" class="cost" name="f_cost" value="0" />
+		</div>
+			    
+		<div>
+			<fieldset id="exams">
+				<legend align="center">Вступительные испытания (ЕГЭ):</legend>
+				<div class="marg">
+					<div>
+						<input type="button" value="Добавить экзамен" class="button" id="addEge" />
+					</div>
+					<div id="example" class="exam">
+						<input type="hidden" name="selectable[]" value="0">
+						<input type="checkbox" class="select_chb" onchange="return(specs.set_selectable(this));" />
+						<select name="ege[]">
+							<option value="0">Выберите экзамен</option>
+							[eges]
+						</select>
+						<a href="#" onclick="return(specs.delEge(this));" title="Удалить экзамен"><div class="delIcon"></div></a>
+					</div>
+					<p id="select-label">На выбор</p>
+					<div class="exam">
+						<input type="hidden" name="selectable[]" value="0">
+						<input type="checkbox" class="select_chb" onchange="return(specs.set_selectable(this));" />
+						<select name="ege[]">
+							<option value="0">Выберите экзамен</option>
+							[egesRu]
+						</select>
+						<a href="#" onclick="return(specs.delEge(this));" title="Удалить экзамен"><div class="delIcon"></div></a>
+					</div>
+				</div>
+
+				<div class="exam" style="display: flex; justify-content: space-around; margin-top: -15px">
+					<input type="checkbox" name="internal_exam" [internal_exam]>
+					<label>Внутренний экзамен</label>
+				</div>
+
+				<div>
+					<p style="margin:0">Проходной балл Бюджет (сумма): <input type="text" id="fscore" rel="*natural" name="fscore" /></p>
+					<p><label>Проходной балл неизвестен: <input id="no-fscore" type="checkbox" /></label></p>
+
+					<p style="margin:0">Проходной балл Платное (сумма): <input type="text" id="pscore" rel="*natural" name="pscore" /></p>
+					<p><label>Проходной балл неизвестен: <input id="no-pscore" type="checkbox" /></label></p>
+				</div>
+			</fieldset>
+		</div>
+		<div class="examsTxt">
+			<div>Дополнительно: <span class="txtLen">символов <b>0</b> из 300</span></div>
+			<div>
+		    	<textarea name="f_text"></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="rightCol disabled">
+		<div>
+			<label>Стоимость обучения (руб/год):</label>
+			<input type="text" id="s_cost"  class="cost" rel="*naturalS" disabled="disabled" name="s_cost" />
+	    </div>
+			    
+		<div class="examsTxt">
+			<div>Дополнительно: <span class="txtLen">символов <b>0</b> из 300</span></div>
+			<div>
+		    	<textarea name="s_text" disabled="disabled"></textarea>
+			</div>
+		</div>
+	</div>
+</div>

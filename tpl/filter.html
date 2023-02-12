@@ -1,0 +1,116 @@
+<form autocomplete="off" method="get" action="[basePath]">
+	<input type="hidden" id="basePath" value="[basePath]" />
+	<input type="hidden" id="checkSubjectId" value="[checkSubjectId]" />
+	<div class="row">
+		<div class="col s6 m4 l3">
+			<select id="lvl">
+				<option value="f" [lvlF]>Первое высшее</option>
+				<option value="s" [lvlS]>Второе высшее</option>
+				<option value="m" [lvlM]>Магистратура</option>
+				<option value="p" [lvlP]>Аспирантура</option>
+			</select>
+		</div>
+		<div class="col l7 hide-on-med-and-down">
+			<div class="row" id="specLarge">
+				<div class="col s7 m8 l9 input-field">
+					<input type="text" class="spec" placeholder="Специальность" value="[spec]" />
+				</div>
+				<div class="col s5 m4 l3">
+					<select id="form" name="form">
+						<option value="1" [frmO]>Очно</option>
+						<option value="2" [frmOZ]>Очно-заочно</option>
+						<option value="3" [frmZ]>Заочно</option>
+						<option value="4" [frmD]>Дистанционно</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="col s6 l2 no-padding valign-wrapper">
+			<button class="btn" type="submit">Подобрать вуз</button>
+			<input type="hidden" id="oksoId" name="spec" value="[oksoId]" />
+
+		</div>
+	</div>
+	<div id="adv-params" class="row valign-wrapper">
+		<div class="col s12 m12 l12">
+			<div class="row">
+				<div class="col s6 l3">
+					<label>
+						<input type="checkbox" name="gos" value="y" [gosCh] />
+						<span>Государственный вуз</span>
+					</label>
+				</div>
+				<div class="col s6 l3">
+					<label>
+						<input type="checkbox" name="free" value="y" [freeCh] />
+						<span>Бюджетные места</span>
+					</label>
+				</div>
+				<div class="col s6 l3">
+					<label>
+						<input type="checkbox" name="mil" value="y" [milCh] />
+						<span>Военная кафедра</span>
+					</label>
+				</div>
+				<div class="col s6 l3">
+					<label>
+						<input type="checkbox" name="hos" value="y" [hosCh] />
+						<span>Общежитие</span>
+					</label>
+				</div>
+			</div>
+			<div class="row" id="specSmall">
+				<div class="col s7 m8 l9 hide-on-large-only input-field">
+					<input type="text" class="spec" placeholder="Поиск: Вуз, специальность" value="[spec]" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<i id="filter-slide" class="material-icons small hide-on-large-only">expand_less</i>
+</form>
+
+<script>
+
+$(document).ready(function () {
+
+	// showFormDist, showLvl - флаги для предотвращения повторного отрабатывания для селектf form и селекта lvl соответственно 
+	// targetOption - физический option, который нужно отключить
+	// targetLi - псевдо option, который подставляется materializ'ом вместо настоящего
+
+	let showFormDist = true;
+	$("#lvl").change(function() {
+		const targetOption = $("#form").find("option[value='4']");
+		const targetLi = $("#form").closest(".select-wrapper").find("li").last();
+		// Поиск нужного option с value="p"
+		if ($(this).val() === "p") {
+			// Hide физического option в hide select
+			targetOption.hide();
+			// Hide подставляемого вместо option li в hide select
+			targetLi.hide();
+			// Флаг
+			showFormDist = false;
+			// При любом другом выбранном option - вывод спрятанного единожды
+		} else if (!showFormDist) {
+			targetOption.show();
+			targetLi.show();
+			showFormDist = true;
+		}
+	});
+
+	let showLvl = true;
+	$("#form").change(function() {
+		const targetOption = $("#lvl").find("option[value='p']");
+		const targetLi = $("#lvl").closest(".select-wrapper").find("li").last();
+		if ($(this).val() === "4") {
+			targetOption.hide();
+			targetLi.hide();
+			showLvl = false;
+		} else if (!showLvl) {
+			targetOption.show();
+			targetLi.show();
+			showLvl = true;
+		}
+	});
+
+});
+</script>
